@@ -1,0 +1,787 @@
+/* Стили для подложки */
+
+.overlay {
+  /* Скрываем подложку  */
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  z-index: 120;
+}
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active {
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Стили для modal окна */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 15px;
+  width: 95%;
+
+  background-color: #fcfcfc;
+  border: 2px solid #f8d24e;
+  border-radius: 10px;
+  /* Скрываем окна  */
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all;
+  padding: 28px;
+
+  @include mq(mob) {
+    width: 320px;
+  }
+
+  @include mq(tab) {
+    width: 568px;
+  }
+  &__button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background-color: inherit;
+  }
+  &__icon {
+    &:hover {
+      cursor: pointer;
+    }
+    @include mq(tab) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+    @include textStyle('Seymour One', 400, 16px, 24px, $ls: 0);
+
+    &--chololate {
+      padding-left: 69px;
+      padding-right: 69px;
+    }
+    @include mq(tab) {
+      margin-bottom: 24px;
+    }
+  }
+  &-list {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 32px;
+    @include mq(mob-only) {
+      flex-direction: column;
+    }
+
+    @include mq(tab) {
+      margin-bottom: 40px;
+      gap: 32px;
+    }
+
+    &__toggle:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__input--hidden {
+    appearance: none;
+  }
+  &__input--hidden:checked + &-item__icecream {
+    background-color: #96af8c;
+  }
+  &__input--hidden:checked + &-item__icecoffee {
+    background-color: #efd478;
+  }
+  &__input--hidden:checked + &-item__milkshake {
+    background-color: #d6936d;
+  }
+  &-icechololate {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      @include mq(tab) {
+        padding-left: 124px;
+        padding-right: 124px;
+        margin-bottom: 48px;
+      }
+    }
+    &__item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+
+      width: 53px;
+      height: 72px;
+      border: 2px solid #9cbe8f;
+      border-radius: 40px;
+    }
+    &__text {
+      padding-bottom: 8px;
+    
+      @include textStyle('Montserrat', 400, 10px, 12px, 0);
+      color: #131313;
+    }
+    &__circle {
+      @include flexCenter();
+      position: absolute;
+      top: -2px;
+
+      width: 43px;
+      height: 43px;
+      background: #9cbe8f;
+      border-radius: 50%;
+      box-shadow: 0px 6px 20px #9cbe8f;
+      &-text {
+       @include textStyle('Montserrat', 500, 10px, 28px, 0);
+        color: #131313;
+      }
+    }
+  }
+
+  &__icechololate {
+    &--wrap {
+      position: relative;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 22px;
+      width: 132px;
+      height: 136px;
+
+      @include mq(tab) {
+        margin-bottom: 24px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        border-radius: 50%;
+        width: 132px;
+        height: 132px;
+        background: linear-gradient(
+            0deg,
+            rgba(156, 190, 143, 0.7),
+            rgba(156, 190, 143, 0.7)
+          ),
+          #d9d9d9;
+        box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+           }
+    }
+    &--image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/modals-b-i-f/icecreamchokol-280.jpg);
+
+      @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/modals-b-i-f/icecreamchokol-280@2x.jpg);
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        background-image: url(../images/modals-b-i-f/icecreamchokol-280@3x.jpg);
+      }
+    }
+  }
+
+  &__icecoffee {
+    &--wrap {
+      position: relative;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 22px;
+      width: 132px;
+      height: 136px;
+
+      @include mq(tab) {
+        margin-bottom: 24px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        border-radius: 50%;
+        width: 132px;
+        height: 132px;
+        background: linear-gradient(
+            0deg,
+            rgba(248, 210, 78, 0.7),
+            rgba(248, 210, 78, 0.7)
+          ),
+          #d9d9d9;
+        box-shadow: 0px 8px 30px rgba(153, 114, 23, 0.25);
+        }
+    }
+    &--image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/modals-b-i-f/icecoffee-280.jpg);
+
+      @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/modals-b-i-f/icecoffee-280@2x.jpg);
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        background-image: url(../images/modals-b-i-f/icecoffee-280@3x.jpg);
+      }
+    }
+    &--circle {
+      @include flexCenter();
+      position: absolute;
+      top: -2px;
+
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: #f8d24eb3;
+      box-shadow: 0 6px 20px #f8d24eb3;
+      &-text {
+      @include textStyle('Montserrat', 500, 10px, 28px, 0);
+      color: #131313;
+      }
+    }
+    &--item {
+      border: 2px solid #efd478;
+    }
+  }
+
+  &__milkshakes {
+    &--wrap {
+      position: relative;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 22px;
+      width: 132px;
+      height: 136px;
+
+      @include mq(tab) {
+        margin-bottom: 24px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        border-radius: 50%;
+        width: 132px;
+        height: 132px;
+        background: linear-gradient(
+            0deg,
+            rgba(213, 117, 63, 0.7),
+            rgba(213, 117, 63, 0.7)
+          ),
+          #d9d9d9;
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+      }
+    }
+    &--image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/modals-b-i-f/milkshake-280.jpg);
+
+      @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/modals-b-i-f/milkshake-280@2x.jpg);
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        background-image: url(../images/modals-b-i-f/milkshake-280@3x.jpg);
+      }
+    }
+    &--circle {
+      @include flexCenter();
+      position: absolute;
+      top: -2px;
+
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: #d6936d;
+      box-shadow: 0px 6px 20px #d6936d;
+      &-text {
+        @include textStyle('Montserrat', 500, 10px, 28px, 0);
+        color: #131313;
+      }
+    }
+    &--item {
+      border: 2px solid #d6936d;
+    }
+  }
+
+  &__posttitle {
+    margin-bottom: 24px;
+    @include textStyle('Montserrat', 500, 20px, 28px, 0);
+    text-align: center;
+    color: #131313;
+    
+    @include mq(tab) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &--icecream-paddings {
+    padding: 28px 20px;
+    @include mq(tab) {
+      padding: 32px 40px;
+    }
+  }
+  &--scroll {
+    height: 100%;
+    overflow-y: scroll;
+    &__tab {
+      @include mq(not-desk) {
+        height: 100%;
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+
+.ingredients-list {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 40px;
+
+  @include mq(tab) {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 48px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 11px;
+  }
+  &__text {
+    @include textStyle('Montserrat', 400, 14px, 25px, 0);
+    letter-spacing: 0.04em;
+    color: #131313;
+  }
+}
+
+/* Додаткові стилі button in modals  */
+.button {
+  &__buy-now {
+    margin-top: 26px;
+    @include mq(tab) {
+      margin-top: 32px;
+    }
+  }
+  &__franchise {
+    margin-top: 24px;
+    @include mq(tab) {
+      margin-top: 32px;
+    }
+  }
+}
+
+/* Стили для forms */
+.modal-form {
+  margin-bottom: 20px;
+  @include mq(tab) {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 368px;
+  }
+
+  &__box {
+    @include flexCenter();
+    align-items: flex-end;
+    position: relative;
+    width: 136px;
+    height: 136px;
+    border: 2px solid #96af8c;
+    filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+    border-radius: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+  }
+
+  &__box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    border-radius: 50%;
+    width: 132px;
+    height: 132px;
+    background: linear-gradient(
+        0deg,
+        rgba(156, 190, 143, 0.7),
+        rgba(156, 190, 143, 0.7)
+      ),
+      #d9d9d9;
+
+    box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/modals-b-i-f/icecream-280.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/modals-b-i-f/icecream-280@2x.jpg);
+    }
+
+    @media (min-device-pixel-ratio: 3),
+      (-webkit-min-device-pixel-ratio: 3),
+      (min-resolution: 288dpi),
+      (min-resolution: 3dppx) {
+      background-image: url(../images/modals-b-i-f/icecream-280@3x.jpg);
+    }
+  }
+
+  &__box-bg {
+    position: absolute;
+    top: -60px;
+    border-radius: 50%;
+    width: 132px;
+    height: 132px;
+    background: linear-gradient(
+        0deg,
+        rgba(156, 190, 143, 0.7),
+        rgba(156, 190, 143, 0.7)
+      ),
+      #d9d9d9;
+
+    box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+  }
+
+  &__box-text {
+    margin-bottom: 20px;
+    @include textStyle('Montserrat', 700, 16px, 20px, 0.04em);
+    text-align: center;
+    text-transform: uppercase;
+    color: #131313;
+  }
+
+  &__input {
+    padding-left: 12px;
+    width: 100%;
+    height: 32px;
+
+    outline: 0;
+
+    background: rgba(248, 210, 78, 0.1);
+    border: 1px solid #84a178;
+    border-radius: 10px;
+
+    @include textStyle('Montserrat', 400, 12px, 17px, 0);
+    color: #131313;
+
+    @include mq(tab) {
+      height: 42px;
+    }
+  }
+
+  &__label:not(:last-child) {
+    display: block;
+    margin-bottom: 12px;
+    @include mq(tab) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__comments {
+    padding: 8px 12px;
+
+    height: 65px;
+    resize: none;
+    outline: 0;
+    width: 100%;
+
+    background: rgba(248, 210, 78, 0.1);
+    border: 1px solid #84a178;
+    border-radius: 10px;
+    @include textStyle('Montserrat', 400, 12px, 17px, 0);
+    color: #131313;
+
+    @include mq(tab) {
+      height: 84px;
+    }
+  }
+}
+
+.modal-item {
+  @include flexCenter();
+  align-items: flex-end;
+  position: relative;
+  width: 136px;
+  height: 136px;
+  margin-left: auto;
+  margin-right: auto;
+  &__icecream {
+    border: 2px solid #96af8c;
+    filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+    border-radius: 15px;
+
+    margin-top: 45px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -43%;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background: linear-gradient(
+          0deg,
+          rgba(156, 190, 143, 0.7),
+          rgba(156, 190, 143, 0.7)
+        ),
+        #d9d9d9;
+
+      box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+    }
+    &--image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/modals-b-i-f/icecream-280.jpg);
+      @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/modals-b-i-f/icecream-280@2x.jpg);
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        background-image: url(../images/modals-b-i-f/icecream-280@3x.jpg);
+      }
+    }
+  }
+
+  &__icecoffee {
+    border: 2px solid #efd478;
+    box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
+    border-radius: 15px;
+
+    margin-top: 45px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -43%;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+
+      background: linear-gradient(
+          0deg,
+          rgba(248, 210, 78, 0.7),
+          rgba(248, 210, 78, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 5.26027px 19.726px rgba(153, 114, 23, 0.25);
+    }
+    &--image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/modals-b-i-f/icecoffee-280.jpg);
+      @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/modals-b-i-f/icecoffee-280@2x.jpg);
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        background-image: url(../images/modals-b-i-f/icecoffee-280@3x.jpg);
+      }
+    }
+  }
+
+  &__milkshake {
+    border: 2px solid #d6936d;
+    filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+    border-radius: 15.7808px;
+
+    margin-top: 45px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -43%;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+
+      background: linear-gradient(
+          0deg,
+          rgba(213, 117, 63, 0.7),
+          rgba(213, 117, 63, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 5.26027px 19.726px rgba(0, 0, 0, 0.25);
+    }
+    &--image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      border-radius: 50%;
+      width: 132px;
+      height: 132px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/modals-b-i-f/milkshake-280.jpg);
+      @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url(../images/modals-b-i-f/milkshake-280@2x.jpg);
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        background-image: url(../images/modals-b-i-f/milkshake-280@3x.jpg);
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    @include textStyle('Montserrat', 700, 16px, 20px, 0.04em);
+    text-align: center;
+    text-transform: uppercase;
+    color: #131313;
+  }
+}
+
+.location {
+  &__map {
+    margin: 0 auto;
+    width: 224px;
+    height: 199px;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @include mq(tab) {
+      width: 448px;
+      height: 260px;
+    }
+  }
+}
+
+.franchise-text {
+  margin-bottom: 24px;
+  text-align: initial;
+  @include textStyle('Montserrat', 400, 14px, 20px, 0);
+  color: #131313;
+
+  @include mq(tab) {
+    margin-bottom: 32px;
+  }
+}
+.franchise-title {
+  margin-bottom: 20px;
+  @include mq(tab) {
+    margin-left: 123px;
+    margin-right: 123px;
+  }
+}
+.modal-made--padding {
+  padding: 28px;
+  @include mq(tab) {
+    padding: 32px 60px;
+  }
+}

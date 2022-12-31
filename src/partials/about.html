@@ -1,0 +1,66 @@
+<section class="about section" id="how">
+  <div class="container">
+    <h2 class="about__subtitle">tradition and love</h2>
+    <h3 class="about__title">how it’s made?</h3>
+    <div class="picture-text">
+      <img
+        class="image__cow"
+        srcset="
+          ./images/about/cow_desktop.png    490w,
+          ./images/about/cow_tablet.png     330w,
+          ./images/about/cow_phone.png      279w,
+          ./images/about/cow_desktop@2x.png 980w,
+          ./images/about/cow_tablet@2x.png  660w,
+          ./images/about/cow_phone@2x.png   558w
+        "
+        sizes="(min-width: 1200px) 490px, (min-width: 768px) 330px, (min-width: 480px) 279px, 100vw"
+        src="./images/about/cow_tablet.png"
+        alt="Фото жовте коло"
+        loading="lazy"
+      />
+
+      <div class="text">
+        <ul class="text__list">
+          <li class="text__item">
+            <p class="first-description">
+              Ice is a place where you will become not only a little happier,
+              but also healthier. Health is the main value for us, and we follow
+              it when creating our handmade desserts.
+            </p>
+          </li>
+          <li class="text__item">
+            <p class="second-description">
+              We use traditional recipes and 100% natural ingredients. Our
+              products are so natural that they can be given to children from
+              the age of three years. Sweets lovers can expect 55 types of ice
+              cream, 15 types of coffee and 23 milkshakes.
+            </p>
+          </li>
+          <li class="text__item">
+            <p class="third-description">
+              This is enough to choose ice cream and coffee for any mood!
+            </p>
+          </li>
+        </ul>
+        <button
+          class="button-typethree active-typethree size-readmore js-open-modal"
+          type="button"
+          data-modal="1"
+        >
+          Read more
+          <svg
+            class="header__button-icon"
+            width="12"
+            height="12"
+            aria-label="Переключатель мобильного меню"
+          >
+            <use
+              class="icon-arrow"
+              href="./images/header-sprite.svg#icon-arrow"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

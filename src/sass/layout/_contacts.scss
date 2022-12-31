@@ -1,0 +1,186 @@
+.contacts {
+    height: 1035px;
+    background-color: #84A178;
+
+    @media screen and (min-width: 768px) {
+        height: 279px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 479px;
+    }
+    
+    &__wrap {
+        position: relative;
+        top: -353px;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            top: -299px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            top: -128px;
+        }
+    }
+
+    &__cafe {
+        display: block;
+        background-color: #FCFCFC;
+        box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
+        border-radius: 24px;
+
+        @media screen and (max-width: 767px) {
+            min-width: 280px;
+            margin: 0 auto;
+            padding: 40px 32px 24px;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            width: calc((100% - 2 * 16px) / 3);
+            padding: 40px 24px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: calc((100% - 2 * 32px) / 3);
+            padding: 40px 40px;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        width: auto;
+        padding: 4px 22px;
+        padding-bottom: 4px;
+        background-color: #F8D24E;
+        border: none;
+        border-radius: 4px;
+        box-sizing: content-box;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.37;
+        letter-spacing: 0.04em;
+        color: #131313;
+
+        @media screen and (min-width: 768px) {
+            font-size: 16px;
+        }
+    }
+
+    &__adress {
+        margin-top: 20px;
+        border-bottom: 1px solid #E1E1E1;
+    }
+
+    &__caption {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.83;
+        letter-spacing: 0.04em;
+        color: #131313;
+
+        @media screen and (min-width: 768px) {
+            font-size: 14px;
+            line-height: 1.86;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 16px;
+            line-height: 1.88;
+        }
+    }
+
+    &__map {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 24px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.83;
+        letter-spacing: 0.04em;
+        color: #D6936D;
+
+        @media screen and (min-width: 768px) {
+            font-size: 14px;
+            line-height: 1.86;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 16px;
+            line-height: 1.81;
+
+            &:hover, &:focus {
+                text-decoration: underline;
+            }    
+        }
+    }
+
+    &__hours {
+        padding: 24px 0;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.83;
+        letter-spacing: 0.04em;
+        color: #ABABAB;
+        border-bottom: 1px solid #E1E1E1;
+
+        @media screen and (min-width: 768px) {
+            font-size: 14px;
+            line-height: 1.86;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 16px;
+            line-height: 1.88;
+        }
+    }
+
+    &__tel-mail {
+        padding-top: 24px;        
+    }
+
+    &__wrap-buttons {
+        display: flex;
+        position: relative;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            top: -353px;
+        }
+        
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+            margin-top: 40px;
+            top: -299px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-top: 60px;
+            top: -128px;
+        }
+    }
+
+    &__buttons {
+
+        @media screen and (max-width: 767px) {
+            &:first-child {
+                margin-bottom: 16px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            &:first-child {
+                margin-right: 16px;
+            }
+        }
+    }
+
+}

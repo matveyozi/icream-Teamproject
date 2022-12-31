@@ -1,0 +1,171 @@
+.footer {
+    padding-top: 60px;
+
+    @include mq(tab) {
+        padding-top: 44px;
+    }
+
+    @include mq(desk) {
+        padding-top: 119px;
+    }
+
+    &__wrapper {
+        color: #FCFCFC;
+        width: 100%;
+
+        @include mq(mob) {}
+
+        @include mq(tab) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include mq(desk) {
+            align-items: self-end;
+        }
+    }
+
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 232px;
+        @include mq(tab) {
+            width: 352px;
+            gap: 8px;
+        }
+
+        @include mq(desk) {
+            width: 504px;
+            gap: 14px;
+        }
+    }
+
+    &__subtitle {
+        
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.22;
+        text-transform: uppercase;
+        color: #FCFCFC;
+
+        @include mq(tab) {
+            font-size: 26px;
+            letter-spacing: 0.04em;
+            
+        }
+
+        @include mq(desk) {
+            font-weight: 400;
+            font-size: 30px;
+            
+        }
+    }
+
+    &__title {
+        
+
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 1.21;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #FCFCFC;
+
+        @include mq(tab) {
+            font-size: 48px;
+            letter-spacing: 0.06em;
+            
+        }
+
+        @include mq(desk) {
+            font-size: 58px;
+            
+        }
+    }
+
+    &-social {
+
+        &__list {
+            margin-top: 60px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+
+            @include mq(tab) {
+                margin: 0;
+            }
+        }
+
+        &__link {
+            display: block;
+            color: #84A178;
+            width: 32px;
+            height: 32px;
+            background-color: #F8D24E;
+            border-radius: 50%;
+
+            &:hover,
+            &:focus {
+                color: #FCFCFC;
+            }
+        }
+
+        &__icon {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+    }
+
+    &__phone {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.86;
+        color: #131313;
+
+        @include mq(tab) {
+            margin-top: 34px;
+        }
+
+        @include mq(desk) {
+            margin-top: 40px;
+        }
+
+        a {
+            color: #FCFCFC;
+        }
+    }
+
+    &__rights {
+        padding: 20px;
+        max-width: 1200px;
+        margin-top: 40px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.52;
+        text-align: center;
+        color: #7A7A7A;
+        border-top: 1px solid #E1E1E1;
+
+        &-descr {
+            width: 150px;
+            margin: 0 auto;
+
+            @include mq(tab) {
+                width: 100%;
+            }
+        }
+
+        @include mq(desk) {
+            width: 1167px;
+            padding: 12px 17px;
+            margin: 60px auto;
+            margin-bottom: 0;
+        }
+
+
+    }
+}

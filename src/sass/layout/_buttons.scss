@@ -1,0 +1,91 @@
+.btn-wrap {
+  margin-top: 50px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+// main styles of buttons
+.button-submit {
+  @extend %button;
+  display: flex;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 121px;
+  background-color: $btnDefaultColor;
+}
+
+.button-typeone {
+  @extend %button;
+  width: 154px;
+  height: 40px;
+  background-color: inherit;
+  text-decoration: underline;
+  color: $btnDefaultColor;
+}
+
+.button-typetwo {
+  @extend %button;
+  background-color: inherit;
+  border: 2px solid $btnDefaultColor;
+}
+
+.button-typethree {
+  @extend %button;
+  background-color: $btnDefaultColor;
+}
+
+// active styles of buttons
+
+.active-typeone {
+  @include oneTransition(color);
+  &:hover {
+    color: $btnFirstActiveColor;
+  }
+  &:focus {
+    color: $btnSecondActiveColor;
+  }
+}
+
+.active-typetwo {
+  @include threeTransition(background-color, color, fill);
+  &:hover {
+    border: 2px solid $btnFirstActiveColor;
+  }
+  &:focus {
+    border: 2px solid $btnFirstActiveColor;
+    color: $btnSecondActiveColor;
+    fill: $btnSecondActiveColor;
+  }
+}
+
+.active-typethree {
+  @include threeTransition(background-color, color, fill);
+  &:hover {
+    background-color: $btnFirstActiveColor;
+  }
+  &:focus {
+    background-color: $btnFirstActiveColor;
+    color: $btnSecondActiveColor;
+    fill: $btnSecondActiveColor;
+  }
+}
+
+// sizes of buttons
+
+.size-readmore {
+  width: 164px;
+}
+.size-location {
+  width: 196px;
+}
+.size-buynow {
+  width: 152px;
+}
+.size-products {
+  width: 134px;
+}
+.size-franchise {
+  width: 196px;
+}

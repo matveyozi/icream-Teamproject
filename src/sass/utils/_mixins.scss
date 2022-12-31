@@ -1,0 +1,101 @@
+@mixin flexCenter($typeFlex: flex, $jc: center, $ai: center) {
+  display: $typeFlex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin flexWrap($gap) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+@mixin textStyle($ff, $fw, $fs, $lh, $ls) {
+  font-family: $ff;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: calc($lh / $fs);
+  letter-spacing: $ls;
+}
+
+@mixin btnTextStyle($lh: 18px, $bcolor: $btnMainColor) {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc($lh / $fs);
+  color: $bcolor;
+}
+
+@mixin oneTransition($property) {
+  transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin twoTransition($firstproperty, $secondproperty) {
+  transition: $firstproperty 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    $secondproperty 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@mixin threeTransition($firstproperty, $secondproperty, $thirdproperty) {
+  transition: $firstproperty 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    $secondproperty 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    $thirdproperty 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin mq($type) {
+  $mobile-sm: 280px;
+  $mobile: 480px;
+  $tablet: 768px;
+  $desktop: 1200px;
+
+  @if $type == 'mob' {
+    @media screen and (min-width: $mobile) {
+      @content;
+    }
+  }
+
+  @if $type == 'mob-only' {
+    @media screen and (max-width: ($tablet - 0.02)) {
+      @content;
+    }
+  }
+
+  @if $type == 'tab' {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+
+  @if $type == 'tab-only' {
+    @media screen and (min-width: $tablet) and (max-width: ($desktop - 0.02)) {
+      @content;
+    }
+  }
+
+  @if $type == 'desk' {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+
+  @if $type == 'not-desk' {
+    @media screen and (max-width: ($desktop - 0.02)) {
+      @content;
+    }
+  }
+
+  @if $type == 'behind-mob' {
+    @media screen and (max-width: ($mobile - 0.02)) {
+      @content;
+    }
+  }
+
+  @if $type == 'mob-tab' {
+    @media screen and (min-width: $mobile) and (max-width: ($desktop - 0.02)) {
+      @content;
+    }
+  }
+  @if $type == 'mob_sm-tab' {
+    @media screen and (min-width: $mobile-sm) and (max-width: ($desktop - 0.02)) {
+      @content;
+    }
+  }
+}

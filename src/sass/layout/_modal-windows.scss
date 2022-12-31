@@ -1,0 +1,91 @@
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 120;
+  transition: 0.3s all;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+
+  width: 100%;
+  max-width: 568px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 130;
+
+  box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 32px 60px;
+  border: 2px solid #f8d24e;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: 0.3s all;
+
+  @include mq(mob-only) {
+    padding: 28px;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  &-title {
+    color: $quantityTextColor;
+
+    @include mq(mob-only) {
+      @include textStyle(Seymour One, 400, 16px, 24px, 0em);
+      margin-bottom: 20px;
+    }
+    @include textStyle(Seymour One, 400, 20px, 28px, 0.04em);
+    margin-bottom: 32px;
+  }
+  &-video {
+    @include mq(mob-only) {
+      width: 100%;
+    }
+    width: 448px;
+  }
+  &-text {
+    text-align: left;
+    color: $quantityTextColor;
+    @include textStyle(Montserrat, 400, 14px, 20px, 0em);
+    margin-top: 20px;
+
+    @include mq(tab) {
+      width: 448px;
+
+      margin-top: 32px;
+      @include textStyle(Montserrat, 400, 16px, 22px, 0em);
+    }
+  }
+}
+
+.modal.active,
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Стили для кнопки закрытия */
+
+.modal__cross {
+  @include mq(mob-only) {
+    width: 20px;
+    height: 20px;
+  }
+  position: absolute;
+  top: 16.5px;
+  right: 16.5px;
+  fill: currentColor;
+  cursor: pointer;
+}
